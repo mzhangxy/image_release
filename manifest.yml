@@ -1,0 +1,13 @@
+---
+applications:
+  - name: sapss                
+    random-route: true    
+    memory: 128M        
+    disk_quota: 256M
+    buildpack: nodejs_buildpack
+    command: node index.js
+    env:
+      UUID: ""              # 必填：填入一个 UUID
+      WSPATH: "argo"               # 选填：WebSocket路径，建议修改
+      # DOMAIN: ""                 # 不用填，代码会自动获取
+      # AUTO_ACCESS: "false"       # 建议设为 false，使用我们之前写的 GitHub Action 来保活
